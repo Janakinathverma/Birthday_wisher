@@ -30,6 +30,15 @@ def load_css():
         /* Hide default streamlit chrome a little */
         header[data-testid="stHeader"] { background: transparent; }
 
+        /* Hide the hamburger menu (About / View app source / Report a bug),
+           the "Made with Streamlit" footer, and the Streamlit toolbar badge
+           so no owner/repo info is visible to viewers */
+        #MainMenu { visibility: hidden; }
+        footer { visibility: hidden; }
+        div[data-testid="stToolbar"] { visibility: hidden; height: 0; }
+        div[data-testid="stDecoration"] { visibility: hidden; height: 0; }
+        div[data-testid="stStatusWidget"] { visibility: hidden; height: 0; }
+
         /* Sidebar */
         section[data-testid="stSidebar"] {
             background: linear-gradient(180deg, #ffd6e0 0%, #ffe9d6 100%);
