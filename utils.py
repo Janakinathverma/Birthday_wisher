@@ -27,17 +27,16 @@ def load_css():
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Hide default streamlit chrome a little */
-        header[data-testid="stHeader"] { background: transparent; }
-
-        /* Hide the hamburger menu (About / View app source / Report a bug),
-           the "Made with Streamlit" footer, and the Streamlit toolbar badge
-           so no owner/repo info is visible to viewers */
-        #MainMenu { visibility: hidden; }
-        footer { visibility: hidden; }
-        div[data-testid="stToolbar"] { visibility: hidden; height: 0; }
-        div[data-testid="stDecoration"] { visibility: hidden; height: 0; }
-        div[data-testid="stStatusWidget"] { visibility: hidden; height: 0; }
+        /* Hide default streamlit chrome, header, footer, menus, and repo information */
+        header[data-testid="stHeader"] { visibility: hidden !important; height: 0 !important; }
+        #MainMenu { visibility: hidden !important; display: none !important; }
+        footer { visibility: hidden !important; display: none !important; }
+        div[data-testid="stToolbar"] { visibility: hidden !important; height: 0 !important; display: none !important; }
+        div[data-testid="stDecoration"] { visibility: hidden !important; height: 0 !important; display: none !important; }
+        div[data-testid="stStatusWidget"] { visibility: hidden !important; height: 0 !important; display: none !important; }
+        .viewerBadge_container__1S12D, .viewerBadge_link__1S12D { display: none !important; }
+        button[title="View app source"] { display: none !important; }
+        [data-testid="stAppDeployButton"] { display: none !important; }
 
         /* Sidebar */
         section[data-testid="stSidebar"] {
@@ -88,6 +87,7 @@ def load_css():
             padding-left: 1rem;
             padding-right: 1rem;
             max-width: 900px;
+            padding-top: 2rem !important;
         }
 
         /* Headings in cute script font */
